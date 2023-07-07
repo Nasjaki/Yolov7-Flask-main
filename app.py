@@ -20,7 +20,7 @@ def find_model():
     print("please place a model file in this directory!")
     
 model_name = find_model()
-model =torch.hub.load("WongKinYiu/yolov7", 'custom',model_name)
+model = torch.hub.load("WongKinYiu/yolov7", 'custom',model_name)
 
 model.eval()
 
@@ -48,13 +48,5 @@ def predict():
         return render_template('result.html',result_image = filename,model_name = model_name)
 
     return render_template('index.html')
-@app.route('/detect', methods=['GET', 'POST'])
-def handle_video():
-    # some code to be implemented later
-    pass
 
-@app.route('/webcam', methods=['GET', 'POST'])
-def web_cam():
-    # some code to be implemented later
-    pass
 
